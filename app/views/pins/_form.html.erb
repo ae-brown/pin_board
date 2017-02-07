@@ -1,0 +1,35 @@
+
+
+<%= form_for @pin, html: { multipart: true } do |f| %>
+
+    <% if @pin.errors.any? %>
+        <% @pin.errors.full_messages.each do |msg| %>
+        <ul>
+        <li> <%= msg %></li>
+        <% end %>
+        </ul>
+    <% end %><br>
+
+    <p>
+      <%= f.label :image %><br>
+      <%= f.file_field :image, class: 'input_format' %>
+    </p>
+
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: 'input_format' %>
+    </p>
+
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_field :description, class: 'desc_format' %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
+
+
+

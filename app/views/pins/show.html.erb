@@ -1,0 +1,25 @@
+
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1><%= @pin.title %></h1><br>
+      </div>
+      <div class="panel-body">
+        <%= image_tag @pin.image.url(:medium) %>      
+        <h3><%= @pin.description %></h2><br>
+        <p>Submitted by <%= @pin.user.name %></p><br>
+        <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_pin_path %>
+        <%= link_to 'Delete', pin_path, method: :delete, data: {confirm: 'Are you sure'} %>
+        <% end %>
+      </div>
+    </div>
+  
+      
+        
+</div>
+</div>
+
+
