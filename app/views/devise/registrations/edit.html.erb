@@ -14,21 +14,25 @@
           <%= f.label :name %>
           <%= f.input :name, required: true, maxlength: "30", label: false  %><br>
           <%= f.label :email %>
-          <%= f.input :email, required: true, maxlength: "30", label: false %><br>
+          <%= f.input :email, required: true, autocomplete: "off",maxlength: "30", label: false, error: false %>
+          <p class='devise-alert'> <%= f.error :email %><br></p>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
 
           <%= f.label :password %>
-          <%= f.input :password, autocomplete: "off",  required: false, maxlength: "30", label: false %>
-          <p>leave it blank if you don't want to change it password</p><br>
+          <%= f.input :password, autocomplete: "off",  required: false, maxlength: "30", label: false,  error: false %>
+          <p class='devise-alert'><%= f.error :password %></p>
+          <p>leave it blank if you don't want to change password</p><br>
 
           <%= f.label :password_confirmation %>
-          <%= f.input :password_confirmation, required: false, label: false, maxlength: "30" %><br>
+          <%= f.input :password_confirmation, autocomplete: "off",required: false, label: false, maxlength: "30",  error: false %>
+          <p class='devise-alert'> <%= f.error :password_confirmation %><br></p>
 
           <%= f.label :current_confirmation %>
-          <%= f.input :current_password,  required: true, label: false, maxlength: "30" %>
+          <%= f.input :current_password, autocomplete: "off", required: true, label: false, maxlength: "30", error: false  %>
+          <p class='devise-alert'><%= f.error :current_confirmation %></p>
 
           <p>we need your current password to confirm your changes</p>
 

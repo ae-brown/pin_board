@@ -11,7 +11,8 @@
 
                   <div class="form-inputs">
                     <%= f.label :email %>
-                    <%= f.input :email, required: true, autofocus: true, label: false, maxlength: "30" %>
+                    <%= f.input :email, required: true, autofocus: true, label: false, maxlength: "30", error: false %>
+                    <p class='devise-alert'> <%= f.error :email %><br></p>
                   </div><br>
 
                   <div class="form-actions">

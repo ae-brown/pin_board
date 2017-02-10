@@ -9,11 +9,21 @@
                       <%= f.error_notification %>
 
                       <div class="form-inputs">
-                        <%= f.input :name, required: true, autofocus: true, maxlength: "50" %><br>
-                        <%= f.input :email, required: true, autofocus: true, maxlength: "50" %><br>
-                        <%= f.input :password, required: true, maxlength: "50" %>
+                        <%= f.label :name %>
+                        <%= f.input :name, required: true, autofocus: false, maxlength: "40", label: false %><br>
+
+                        <%= f.label :email %>
+                        <%= f.input :email, required: true, autofocus: false, maxlength: "40", label: false, error: false %>
+                        <p class='devise-alert'> <%= f.error :email %><br></p>
+
+                        <%= f.label :password %>
+                        <%= f.input :password, required: true, maxlength: "40", label: false, error: false %>
+                        <p class='devise-alert'> <%= f.error :password %><br></p>
                         <p>password must be 8 characters or more</p><br>
-                        <%= f.input :password_confirmation , required: true %>
+
+                        <%= f.label :password_confirmation %>
+                        <%= f.input :password_confirmation , required: true, label: false, maxlength: "40", error: false %>
+                        <p class='devise-alert'> <%= f.error :password_confirmation %><br></p>
                       </div><br>
 
                       <div class="form-actions">

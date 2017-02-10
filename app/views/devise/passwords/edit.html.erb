@@ -15,9 +15,12 @@
 
             <div class="form-inputs">
               <%= f.label :password %>
-              <%= f.input :password, label: "New password", required: true, autofocus: true, label: false, maxlength: "30" %>
+              <%= f.input :password, label: "New password", required: true, autofocus: true, label: false, maxlength: "30", error: false %>
+              <p class='devise-alert'> <%= f.error :password %><br></p>
+
               <%= f.label :password_confirmation %>
-              <%= f.input :password_confirmation, label: "Confirm your new password", required: true, label: false, maxlength: "30" %><br>
+              <%= f.input :password_confirmation, label: "Confirm your new password", required: true, label: false, maxlength: "30", error: false %>
+              <p class='devise-alert'> <%= f.error :password_confirmation %><br></p>
             </div>
 
             <div class="form-actions">

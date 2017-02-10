@@ -9,9 +9,12 @@
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.label :email %>
-            <%= f.input :email, required: false, autofocus: true, maxlength: "30", label: false %><br>
+            <%= f.input :email, required: false, autofocus: false, maxlength: "30", label: false %><br>
+              
+            
             <%= f.label :password %>
             <%= f.input :password, required: false, maxlength: "30", label: false %><br>
+            
             <div class="checkbox">
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
